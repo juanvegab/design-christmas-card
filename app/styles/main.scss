@@ -1,91 +1,110 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
-
+@import url('http://fonts.googleapis.com/css?family=Oswald|Lobster');
+@import url('http://fonts.googleapis.com/css?family=Peralta');
 @import 'sass-bootstrap/lib/bootstrap';
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-/* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  margin-top: 7%;
+  background: #eaeaea;
+  text-align: center;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
+a {
+  color: #47473c;
+  font-family: Lobster;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 15px;
 }
 
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
+h1 {
+  font-family: Lobster;
+  font-weight: normal;
+  margin: 0;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+@-webkit-keyframes rotate-cycle1 {
+	0% {-webkit-transform: rotateY(0deg)}
+	33%{-webkit-transform: rotateY(-90deg)}
+	34% {-webkit-transform: rotateY(90deg); -webkit-animation-timing-function: step-start;}
+	100% {-webkit-transform: rotateY(1deg)}
 }
 
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
+@-webkit-keyframes images-switch {
+	0% {-webkit-transform: rotateY(0deg);}
+	0.32894736842105265% {-webkit-transform: rotateY(-90deg); background: url('../images/1.jpg'); -webkit-animation-timing-function: step-start;}
+	0.42894736842105263% {-webkit-transform: rotateY(90deg);}
+	0.6578947368421053% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;}
+	9.210526315789474% {-webkit-transform: rotateY(1deg);}
+	9.539473684210527% {-webkit-transform: rotateY(-90deg); background: url('../images/2.jpg'); -webkit-animation-timing-function: step-start;}
+	9.639473684210527% {-webkit-transform: rotateY(90deg);}
+	9.868421052631579% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;}
+	18.42105263157895% {-webkit-transform: rotateY(1deg);}
+	18.75% {-webkit-transform: rotateY(-90deg); background: url('../images/3.jpg'); -webkit-animation-timing-function: step-start;}
+	18.85% {-webkit-transform: rotateY(90deg);}
+	19.078947368421055% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;}
+	27.631578947368425% {-webkit-transform: rotateY(1deg);}
+	27.960526315789476% {-webkit-transform: rotateY(-90deg); background: url('../images/4.jpg'); -webkit-animation-timing-function: step-start;}
+	28.060526315789478% {-webkit-transform: rotateY(90deg);}
+	28.28947368421053% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;}
+	36.8421052631579% {-webkit-transform: rotateY(1deg);}
+	37.17105263157895% {-webkit-transform: rotateY(-90deg); background: url('../images/5.jpg'); -webkit-animation-timing-function: step-start;}
+	37.271052631578954% {-webkit-transform: rotateY(90deg);}
+	37.5% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;}
+	46.05263157894737% {-webkit-transform: rotateY(1deg);}
+	46.381578947368425% {-webkit-transform: rotateY(-90deg); background: url('../images/6.jpg'); -webkit-animation-timing-function: step-start;}
+	46.481578947368426% {-webkit-transform: rotateY(90deg);}
+	46.71052631578947% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;}
+	55.26315789473684% {-webkit-transform: rotateY(1deg);}
+	55.5921052631579% {-webkit-transform: rotateY(-90deg); background: url('../images/7.jpg'); -webkit-animation-timing-function: step-start;}
+	55.6921052631579% {-webkit-transform: rotateY(90deg);}
+	55.921052631578945% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;}
+	77.63157894736842% {-webkit-transform: rotateY(1deg);}
+	77.96052631578948% {-webkit-transform: rotateY(-90deg); background: url('../images/8.jpg'); -webkit-animation-timing-function: step-start;}
+	78.06052631578947% {-webkit-transform: rotateY(90deg);}
+	78.28947368421053% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;}
+	100% {-webkit-transform: rotateY(1deg);}
 }
 
-.container-narrow > hr {
-    margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-}
-
-.marketing p + h4 {
-    margin-top: 28px;
+#container {
+	margin: 0 auto;
+	-webkit-perspective: 2000px;
+	-moz-perspective: 2000px;
+	-ms-perspective: 2000px;
+	-o-perspective: 2000px;
+	perspective: 2000px;
+	
+	#portfolio {
+		margin: 2em 0 1em;
+		.christmas-card{
+			-webkit-transform: translate3d(0, 0, 0);
+			-webkit-animation: images-switch 80s ease-in 2s infinite;
+			background: url('../images/1.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			width: 487px;
+			height: 630px;
+			margin: 0 auto;
+			position: relative;
+			p{
+				font-family: 'Peralta', cursive;
+				position: absolute;
+				bottom: 37%;
+				width: 100%;
+				display: none;
+			}
+		}
+	}
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
-
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
+@media screen and (max-width: 560px) {
+	#container {
+		#portfolio {
+			.christmas-card{
+				width: 285px;
+				height: 370px;
+			}
+		}
+	}
 }
