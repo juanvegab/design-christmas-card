@@ -30,6 +30,13 @@ h1 {
 	100% {-webkit-transform: rotateY(1deg)}
 }
 
+@-webkit-keyframes name-appear {
+	0% {opacity: 0}
+	55.625% {opacity: 0}
+	77.8125% {opacity: 1}
+	100% {opacity: 0}
+}
+
 @-webkit-keyframes images-switch {
 	0% {-webkit-transform: rotateY(0deg);}
 	0.32894736842105265% {-webkit-transform: rotateY(-90deg); background: url('../images/1.jpg'); -webkit-animation-timing-function: step-start;}
@@ -86,12 +93,14 @@ h1 {
 			height: 630px;
 			margin: 0 auto;
 			position: relative;
-			p{
+			.card-name{
+				-webkit-transform: translate3d(0, 0, 0);
+				-webkit-animation: name-appear 80s step-start 2s infinite;
 				font-family: 'Peralta', cursive;
 				position: absolute;
 				bottom: 37%;
 				width: 100%;
-				display: none;
+				opacity: 0;
 			}
 		}
 	}
