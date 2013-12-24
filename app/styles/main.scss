@@ -2,9 +2,74 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 @import url('http://fonts.googleapis.com/css?family=Oswald|Lobster');
 @import url('http://fonts.googleapis.com/css?family=Peralta');
 @import 'sass-bootstrap/lib/bootstrap';
+@import "compass/css3";
+
+
+@mixin keyframes($name) {
+  @-o-keyframes $name { @content };
+  @-moz-keyframes $name { @content };
+  @-webkit-keyframes $name { @content }; 
+  @-keyframes $name { @content };
+}
+@mixin animation-name($name...) {
+  -o-animation-name: $name;
+  -moz-animation-name: $name;
+  -webkit-animation-name: $name;
+  animation-name: $name;
+}
+@mixin animation-duration($duration...) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+@mixin animation-duration($duration...) {
+  -o-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+}
+@mixin animation-timing-function($timing...) {
+  -o-animation-timing-function: $timing;
+  -moz-animation-timing-function: $timing;
+  -webkit-animation-timing-function: $timing;
+  animation-timing-function: $timing;
+}
+@mixin animation-iteration-count($count...) {
+  -o-animation-iteration-count: $count;
+  -moz-animation-iteration-count: $count;
+  -webkit-animation-iteration-count: $count;
+  animation-iteration-count: $count;
+}
+@mixin animation-direction($direction...) {
+  -o-animation-direction: $direction;
+  -moz-animation-direction: $direction;
+  -webkit-animation-direction: $direction;
+  animation-direction: $direction;
+}
+@mixin animation-fill-mode($fill...) {
+  -o-animation-fill-mode: $fill;
+  -moz-animation-fill-mode: $fill;
+  -webkit-animation-fill-mode: $fill;
+  animation-fill-mode: $fill;
+}
+@mixin animation-play-state($state...) {
+  -o-animation-play-state: $state;
+  -moz-animation-play-state: $state;
+  -webkit-animation-play-state: $state;
+  animation-play-state: $state;
+}
+@mixin animation($animation...) {
+  -o-animation: $animation;
+  -moz-animation: $animation;
+  -webkit-animation: $animation;
+  animation: $animation;
+}
+
+
 
 body {
-  margin-top: 7%;
+  margin-top: 4%;
   background: #eaeaea;
   text-align: center;
 }
@@ -23,54 +88,47 @@ h1 {
   margin: 0;
 }
 
-@-webkit-keyframes rotate-cycle1 {
-	0% {-webkit-transform: rotateY(0deg)}
-	33%{-webkit-transform: rotateY(-90deg)}
-	34% {-webkit-transform: rotateY(90deg); -webkit-animation-timing-function: step-start;}
-	100% {-webkit-transform: rotateY(1deg)}
+@include keyframes(name-appear) {
+	0% {opacity: 0;}
+	40.833333333333336% {opacity: 0;}
+	70% {opacity: 1;}
+	100% {opacity: 0;}
 }
 
-@-webkit-keyframes name-appear {
-	0% {opacity: 0}
-	40.833333333333336% {opacity: 0}
-	70.41666666666667% {opacity: 1}
-	100% {opacity: 0}
-}
-
-@-webkit-keyframes images-switch {
-	0% {-webkit-transform: rotateY(0deg);}
-	0.4166666666666667% {-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg); background: url('../images/1.jpg'); -webkit-animation-timing-function: step-start;-moz-animation-timing-function: step-start;}
-	0.5166666666666667% {-webkit-transform: rotateY(90deg);-moz-transform: rotateY(90deg);}
-	0.8333333333333334% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;-moz-transform: rotateY(1deg);-moz-animation-timing-function: ease-in;}
-	6.666666666666667% {-webkit-transform: rotateY(1deg);-moz-transform: rotateY(1deg);}
-	7.083333333333334% {-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg); background: url('../images/2.jpg'); -webkit-animation-timing-function: step-start;-moz-animation-timing-function: step-start;}
-	7.183333333333334% {-webkit-transform: rotateY(90deg);-moz-transform: rotateY(90deg);}
-	7.5% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;-moz-transform: rotateY(1deg);-moz-animation-timing-function: ease-in;}
-	13.333333333333334% {-webkit-transform: rotateY(1deg);-moz-transform: rotateY(1deg);}
-	13.75% {-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg); background: url('../images/3.jpg'); -webkit-animation-timing-function: step-start;-moz-animation-timing-function: step-start;}
-	13.85% {-webkit-transform: rotateY(90deg);-moz-transform: rotateY(90deg);}
-	14.166666666666668% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;-moz-transform: rotateY(1deg);-moz-animation-timing-function: ease-in;}
-	20% {-webkit-transform: rotateY(1deg);-moz-transform: rotateY(1deg);}
-	20.416666666666668% {-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg); background: url('../images/4.jpg'); -webkit-animation-timing-function: step-start;-moz-animation-timing-function: step-start;}
-	20.51666666666667% {-webkit-transform: rotateY(90deg);-moz-transform: rotateY(90deg);}
-	20.833333333333332% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;-moz-transform: rotateY(1deg);-moz-animation-timing-function: ease-in;}
-	26.666666666666668% {-webkit-transform: rotateY(1deg);-moz-transform: rotateY(1deg);}
-	27.083333333333336% {-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg); background: url('../images/5.jpg'); -webkit-animation-timing-function: step-start;-moz-animation-timing-function: step-start;}
-	27.183333333333337% {-webkit-transform: rotateY(90deg);-moz-transform: rotateY(90deg);}
-	27.5% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;-moz-transform: rotateY(1deg);-moz-animation-timing-function: ease-in;}
-	33.333333333333336% {-webkit-transform: rotateY(1deg);-moz-transform: rotateY(1deg);}
-	33.75% {-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg); background: url('../images/6.jpg'); -webkit-animation-timing-function: step-start;-moz-animation-timing-function: step-start;}
-	33.85% {-webkit-transform: rotateY(90deg);-moz-transform: rotateY(90deg);}
-	34.16666666666667% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;-moz-transform: rotateY(1deg);-moz-animation-timing-function: ease-in;}
-	40% {-webkit-transform: rotateY(1deg);-moz-transform: rotateY(1deg);}
-	40.416666666666664% {-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg); background: url('../images/7.jpg'); -webkit-animation-timing-function: step-start;-moz-animation-timing-function: step-start;}
-	40.516666666666666% {-webkit-transform: rotateY(90deg);-moz-transform: rotateY(90deg);}
-	40.833333333333336% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;-moz-transform: rotateY(1deg);-moz-animation-timing-function: ease-in;}
-	70% {-webkit-transform: rotateY(1deg);-moz-transform: rotateY(1deg);}
-	70.41666666666667% {-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg); background: url('../images/8.jpg'); -webkit-animation-timing-function: step-start;-moz-animation-timing-function: step-start;}
-	70.51666666666667% {-webkit-transform: rotateY(90deg);-moz-transform: rotateY(90deg);}
-	70.83333333333333% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;-moz-transform: rotateY(1deg);-moz-animation-timing-function: ease-in;}
-	100% {-webkit-transform: rotateY(1deg);-moz-transform: rotateY(1deg);}
+@include keyframes(images-switch) {
+	0% {@include transform(rotateY(0deg));}
+	0.4166666666666667% {@include transform(rotateY(-90deg)); background: url('../images/1.jpg'); @include animation-timing-function(step-start);}
+	0.5166666666666667% {@include transform(rotateY(90deg));}
+	0.8333333333333334% {@include transform(rotateY(1deg));@include animation-timing-function(ease-in);}
+	6.666666666666667% {@include transform(rotateY(1deg));}
+	7.083333333333334% {@include transform(rotateY(-90deg)); background: url('../images/2.jpg'); @include animation-timing-function(step-start);}
+	7.183333333333334% {@include transform(rotateY(90deg));}
+	7.5% {@include transform(rotateY(1deg));@include animation-timing-function(ease-in);}
+	13.333333333333334% {@include transform(rotateY(1deg));}
+	13.75% {@include transform(rotateY(-90deg)); background: url('../images/3.jpg'); @include animation-timing-function(step-start);}
+	13.85% {@include transform(rotateY(90deg));}
+	14.166666666666668% {@include transform(rotateY(1deg));@include animation-timing-function(ease-in);}
+	20% {@include transform(rotateY(1deg));}
+	20.416666666666668% {@include transform(rotateY(-90deg)); background: url('../images/4.jpg'); @include animation-timing-function(step-start);}
+	20.51666666666667% {@include transform(rotateY(90deg));}
+	20.833333333333332% {@include transform(rotateY(1deg));@include animation-timing-function(ease-in);}
+	26.666666666666668% {@include transform(rotateY(1deg));}
+	27.083333333333336% {@include transform(rotateY(-90deg)); background: url('../images/5.jpg'); @include animation-timing-function(step-start);}
+	27.183333333333337% {@include transform(rotateY(90deg));}
+	27.5% {@include transform(rotateY(1deg));@include animation-timing-function(ease-in);}
+	33.333333333333336% {@include transform(rotateY(1deg));}
+	33.75% {@include transform(rotateY(-90deg)); background: url('../images/6.jpg'); @include animation-timing-function(step-start);}
+	33.85% {@include transform(rotateY(90deg));}
+	34.16666666666667% {@include transform(rotateY(1deg));@include animation-timing-function(ease-in);}
+	40% {@include transform(rotateY(1deg));}
+	40.416666666666664% {@include transform(rotateY(-90deg)); background: url('../images/7.jpg'); @include animation-timing-function(step-start);}
+	40.516666666666666% {@include transform(rotateY(90deg));}
+	40.833333333333336% {@include transform(rotateY(1deg));@include animation-timing-function(ease-in);}
+	70% {@include transform(rotateY(1deg));}
+	70.41666666666667% {@include transform(rotateY(-90deg)); background: url('../images/8.jpg'); @include animation-timing-function(step-start);}
+	70.51666666666667% {@include transform(rotateY(90deg));}
+	70.83333333333333% {@include transform(rotateY(1deg));@include animation-timing-function(ease-in);}
+	100% {@include transform(rotateY(1deg));}
 }
 
 #container {
@@ -84,9 +142,9 @@ h1 {
 	#portfolio {
 		margin: 2em 0 1em;
 		.christmas-card{
-			-webkit-transform: translate3d(0, 0, 0);
-			-webkit-transform: rotateY(1deg);
-			-webkit-animation: images-switch 50s ease-in 2s infinite;
+			@include transform(translate3d(0, 0, 0));
+			@include transform(rotateY(1deg));
+			@include animation(images-switch 48s ease-in 3s infinite);
 			background: url('../images/1.jpg');
 			background-size: 100% auto;
 			background-repeat: no-repeat;
@@ -95,8 +153,8 @@ h1 {
 			margin: 0 auto;
 			position: relative;
 			.card-name{
-				-webkit-transform: translate3d(0, 0, 0);
-				-webkit-animation: name-appear 50s step-start 2s infinite;
+				@include transform(translate3d(0, 0, 0));
+				@include animation(name-appear 48s step-start 3s infinite);
 				font-family: 'Peralta', cursive;
 				position: absolute;
 				bottom: 37%;

@@ -25,7 +25,7 @@ console.log(msj);
 
 //-----------------------------------------
 
-var msj = "\t0% {-webkit-transform: rotateY(0deg);}\n";
+var msj = "\t0% {@include transform(rotateY(-90deg));}\n";
 var count = 0;
 
 var LONG_SLIDES_COUNT = 2;
@@ -40,16 +40,16 @@ var SECOND_PERCENT = 100/TOTAL_SECONDS;
 
 for(var i=1; i<=(NUMBER_SLIDES); i++){
 	if(i<(NUMBER_SLIDES-1)){
-		msj+="\t" + ((count + SECOND_PERCENT/4)) + "% {-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg); background: url('../images/"+i+".jpg'); -webkit-animation-timing-function: step-start;-moz-animation-timing-function: step-start;}\n";
-		msj+="\t" + (((count + SECOND_PERCENT/4))+0.1) + "% {-webkit-transform: rotateY(90deg);-moz-transform: rotateY(90deg);}\n";
-		msj+="\t" + ((count + SECOND_PERCENT/2)) + "% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;-moz-transform: rotateY(1deg);-moz-animation-timing-function: ease-in;}\n";
-		msj+="\t" + ((count + SECOND_PERCENT*SHORT_SLIDE_TIME)) + "% {-webkit-transform: rotateY(1deg);-moz-transform: rotateY(1deg);}\n";
+		msj+="\t" + ((count + SECOND_PERCENT/4)) + "% {@include transform(rotateY(-90deg)); background: url('../images/"+i+".jpg'); @include animation-timing-function(step-start);}\n";
+		msj+="\t" + (((count + SECOND_PERCENT/4))+0.1) + "% {@include transform(rotateY(90deg));}\n";
+		msj+="\t" + ((count + SECOND_PERCENT/2)) + "% {@include transform(rotateY(1deg));@include animation-timing-function(ease-in);}\n";
+		msj+="\t" + ((count + SECOND_PERCENT*SHORT_SLIDE_TIME)) + "% {@include transform(rotateY(1deg));}\n";
 		count += SECOND_PERCENT*SHORT_SLIDE_TIME;
 	}else{
-		msj+="\t" + ((count + SECOND_PERCENT/4)) + "% {-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg); background: url('../images/"+i+".jpg'); -webkit-animation-timing-function: step-start;-moz-animation-timing-function: step-start;}\n";
-		msj+="\t" + (((count + SECOND_PERCENT/4))+0.1) + "% {-webkit-transform: rotateY(90deg);-moz-transform: rotateY(90deg);}\n";
-		msj+="\t" + ((count + SECOND_PERCENT/2)) + "% {-webkit-transform: rotateY(1deg);-webkit-animation-timing-function: ease-in;-moz-transform: rotateY(1deg);-moz-animation-timing-function: ease-in;}\n";
-		msj+="\t" + ((count + SECOND_PERCENT*LONG_SLIDE_TIME)) + "% {-webkit-transform: rotateY(1deg);-moz-transform: rotateY(1deg);}\n";
+		msj+="\t" + ((count + SECOND_PERCENT/4)) + "% {@include transform(rotateY(-90deg)); background: url('../images/"+i+".jpg'); @include animation-timing-function(step-start);}\n";
+		msj+="\t" + (((count + SECOND_PERCENT/4))+0.1) + "% {@include transform(rotateY(90deg));}\n";
+		msj+="\t" + ((count + SECOND_PERCENT/2)) + "% {@include transform(rotateY(1deg));@include animation-timing-function(ease-in);}\n";
+		msj+="\t" + ((count + SECOND_PERCENT*LONG_SLIDE_TIME)) + "% {@include transform(rotateY(1deg));}\n";
 		count += SECOND_PERCENT*LONG_SLIDE_TIME;
 	}
 
